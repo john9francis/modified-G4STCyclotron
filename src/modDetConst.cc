@@ -157,6 +157,8 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
 }
 
 void ModifiedDetConst::SetFoilThickness(G4double foilThickness){
+  G4cout << "Setting Modified Foil Thickness" << G4endl;
+
   if(fFoil_thickness != foilThickness){
     //Change the thickness
     if(fSolidFoil) fSolidFoil->SetZHalfLength(0.5*foilThickness*mm);
