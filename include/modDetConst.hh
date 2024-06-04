@@ -7,13 +7,7 @@
 
 class ModifiedDetConst : public STCyclotronDetectorConstruction {
 public:
-  ModifiedDetConst() : STCyclotronDetectorConstruction() { 
-    G4cout << "Hello Modified Detector Construction" << G4endl;
-
-    // modify detector messenger to track this instead of the STCyclotron det cons.
-    delete fDetectorMessenger;
-    fDetectorMessenger = new STCyclotronDetectorMessenger(this);
-  }
+  ModifiedDetConst();
 
   G4VPhysicalVolume* Construct() override;
 };
