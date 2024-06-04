@@ -5,9 +5,8 @@
 
 class ModifiedDetConst : public STCyclotronDetectorConstruction {
 public:
-  ModifiedDetConst(){ 
+  ModifiedDetConst() : STCyclotronDetectorConstruction() { 
     G4cout << "Hello Modified Detector Construction" << G4endl;
-    STCyclotronDetectorConstruction();
   }
 };
 
