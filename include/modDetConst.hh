@@ -10,6 +10,9 @@ public:
   ModifiedDetConst();
 
   G4VPhysicalVolume* Construct() override;
+
+  void SetFoilThickness(G4double foilThickness);
+  
 };
 
 

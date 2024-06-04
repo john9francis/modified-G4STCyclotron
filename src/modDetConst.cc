@@ -155,3 +155,11 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
   G4cout << "Modified Detectors sucessfully constructed" << G4endl;
   return physWorld;
 }
+
+void ModifiedDetConst::SetFoilThickness(G4double foilThickness){
+  if(fFoil_thickness != foilThickness){
+    //Change the thickness
+    if(fSolidFoil) fSolidFoil->SetZHalfLength(0.5*foilThickness*mm);
+    G4cout << "The new thickness of the foil is " << fFoil_thickness << " mm." << G4endl;
+  }     
+}
