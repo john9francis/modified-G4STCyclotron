@@ -44,6 +44,8 @@
 #include "STCyclotronPrimaryGeneratorAction.hh"
 #include "STCyclotronRunAction.hh"
 
+#include "modDetConst.hh"
+
 int main(int argc, char** argv)
 {
 // Construct the default run manager
@@ -53,7 +55,7 @@ int main(int argc, char** argv)
   runManager -> SetNumberOfThreads(nThreads);
   
   //Set mandatory initialization classes
-  STCyclotronDetectorConstruction* det = new STCyclotronDetectorConstruction();
+  STCyclotronDetectorConstruction* det = new ModifiedDetConst();
   runManager->SetUserInitialization(det);  
  
   STCyclotronPhysicsList* physList = new STCyclotronPhysicsList(det);
