@@ -184,5 +184,8 @@ private:
   
   std::ofstream fParametersSummary;
 
+
+  friend class ModifiedDetConst;
+
 };
 #endif
