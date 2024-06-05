@@ -9,7 +9,7 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 - STCyclotronDetectorConstruction.hh: added the keyword `virtual` to the `SetFoilThickness(G4double)` function so that I could override it. The reason for this was because the original function references some of the tube's geometries like, "fPhysLayer_PART3" etc. Since these were initialized as null, it causes a seg fault. So this function needed to be rewritten to not reference these null pointers at all.
 
 # Todo:
-- [ ] Get it running outside a container so I can get an OGL viewer.
+- [x] Get it running outside a container so I can get an OGL viewer.
 
 
 # Acknowledgments
