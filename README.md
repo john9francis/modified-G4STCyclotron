@@ -4,7 +4,7 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 
 # Changes to original
 - New files: "modDetConst.hh" and "modDetConst.cc" define a modified detector construction that can be customized as desired. They still include the target and the foil, only because these geometries are basically required for the app to work. So many parts of the program depend on these two geometries including the graphs produced and the messengers.
-  - This new class defines the tube part4 outer radius and the tube part 4 length to 1 m each. The reason for this is that when modifying the target geometry, it can't be wider than tube outer radius or longer than the tube length. Setting them both to 1 m gives the target sufficient room as long as it's not bigger than 1 m (much bigger than any target would need to be) 
+  - This new class defines the tube part4 outer radius and the tube part 4 length to 1 m each. The reason for this is that when modifying the target geometry, the program throws an error if the target is bigger than the tube it's in. Setting them both to 1 m gives the target sufficient room as long as it's not bigger than 1 m (much bigger than any target would need to be) 
 - STCyclotron.cc: instead of registering the STCyclotronDetectorConstruction, I registered my own class, "ModifiedDetConst"
 - STCyclotronDetectorConstruction.hh: added the keyword `virtual` to the `SetFoilThickness(G4double)` function so that I could override it. The reason for this was because the original function references some of the tube's geometries like, "fPhysLayer_PART3" etc. Since these were initializes as null, it causes a seg fault. So this function needed to be rewritten to not reference these null pointers at all.
 
