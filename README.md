@@ -8,3 +8,7 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 
 # Todo:
 - [ ] Get it running outside a container so I can get an OGL viewer.
+
+
+# Acknowledgments
+- This software contains official [Geant4](https://geant4.web.cern.ch/) software and should only be used according to it's license. 
