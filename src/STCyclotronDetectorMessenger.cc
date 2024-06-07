@@ -56,7 +56,7 @@ STCyclotronDetectorMessenger::STCyclotronDetectorMessenger(STCyclotronDetectorCo
 	                                   "\nDefault value is 7. mm."
 					   "\nThe range is between 0 and 15 mm.");
     fChangeTargetDiameterCmd -> SetParameterName("TargetDiameter", true);
-    fChangeTargetDiameterCmd -> SetRange("TargetDiameter > 0. && TargetDiameter < 15.");
+    fChangeTargetDiameterCmd -> SetRange("TargetDiameter > 0. && TargetDiameter < 1000.");
     fChangeTargetDiameterCmd -> SetDefaultValue(7.*mm);
     fChangeTargetDiameterCmd -> AvailableForStates(G4State_Idle);
     fChangeTargetDiameterCmd -> SetDefaultUnit("mm");
