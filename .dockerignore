@@ -1,0 +1,7 @@
+.devcontainer/
+.github/
+.vscode/
+build/
+Results/
+win_build/
+.gitignore
