@@ -125,7 +125,7 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
 			  fFoil_Material,
 			  "Foil");
   
-  fZ_foil_position = 10 * mm;
+  fZ_foil_position = 10 * cm;
   
   fPhysFoil
     = new G4PVPlacement(0,                                    
