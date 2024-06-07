@@ -32,7 +32,7 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
   G4double world_hx = 1.*m;
   G4double world_hy = 1.*m;
   G4double world_hz = 1.*m;
-  G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
+  G4Material* world_mat = nist->FindOrBuildMaterial("G4_Galactic");
 
   G4Box* solidWorld 
     = new G4Box("World",
