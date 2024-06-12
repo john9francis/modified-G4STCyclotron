@@ -10,7 +10,7 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 
 # Todo:
 - [x] Get it running outside a container so I can get an OGL viewer.
-- [ ] Dockerize it... That means doing a FROM scratch and making my own linux distro and putting it on there
+- [x] Dockerize it. update: docker image can be found [here](https://hub.docker.com/repository/docker/john9francis/modified_stcyclotron)
 
 
 # Acknowledgments
