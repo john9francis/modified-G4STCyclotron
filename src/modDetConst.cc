@@ -76,7 +76,8 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
   G4double target_outerRadius     = 0.5*fTarget_diameter;
   G4double target_hz              = 0.5*fTarget_thickness;
  
-  fTarget_z_position = .5 * 11.5 * mm - 0.5 * fTarget_thickness;
+  // target position same as original
+  fTarget_z_position = 186.24500099999997 * mm;
 
   fSolidTarget 
     = new G4Tubs("Target",
@@ -110,8 +111,8 @@ G4VPhysicalVolume* ModifiedDetConst::Construct(){
   G4double foil_innerRadius    = 0.*mm;
   G4double foil_outerRadius    = 16.*mm;
   
-  fZ_foil_position = 0.5*fFoil_thickness + 124.6*mm + 12.*mm;
-
+  // foil position same as original
+  fZ_foil_position = 136.6000005 * mm;
 
   fSolidFoil 
     = new G4Tubs("Foil",
