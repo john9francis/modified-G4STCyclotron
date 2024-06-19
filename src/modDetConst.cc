@@ -10,10 +10,6 @@
 ModifiedDetConst::ModifiedDetConst() : STCyclotronDetectorConstruction() {
   G4cout << "Hello Modified Detector Construction" << G4endl;
 
-  // modify detector messenger to track this instead of the STCyclotron det cons.
-  delete fDetectorMessenger;
-  fDetectorMessenger = new STCyclotronDetectorMessenger(this);
-
   // Set all the lengths to very large so we don't have any restrictions
   fTube_outerRadius_PART4 = 1 * m;
   fTube_length_PART4 = 1 * m;
