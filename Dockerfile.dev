@@ -1,0 +1,3 @@
+FROM john9francis/stcyclotron:latest
+
+RUN apt-get -y install git
