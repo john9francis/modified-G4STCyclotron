@@ -1,8 +1,9 @@
 FROM john9francis/stcyclotron:latest
 
-WORKDIR /home/modified_cyclotron/
+WORKDIR /home/
 
-COPY . /home/modified_cyclotron/
+RUN wget -O release.tar.gz https://github.com/john9francis/modified-G4STCyclotron/archive/refs/tags/v0.1.3.tar.gz \
+&& tar -xzf release.tar.gz && rm release.tar.gz && mv modified-G4STCyclotron-0.1.3/ modified_cyclotron
 
 WORKDIR /home/modified_cyclotron/build/
 
