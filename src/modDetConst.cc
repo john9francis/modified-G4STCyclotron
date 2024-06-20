@@ -8,6 +8,7 @@
 #include "G4LogicalVolume.hh"
 
 #include "G4UnitsTable.hh"
+#include "G4RunManager.hh"
 
 #include "modDetMessenger.hh"
 
@@ -38,6 +39,9 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
     << "The target's Z position is now: "
     << G4BestUnit(fPhysTarget->GetObjectTranslation().getZ(), "Length")
     << G4endl;
+
+  G4RunManager::GetRunManager() -> GeometryHasBeenModified();
+  G4cout << "... Geometry is notified .... " << G4endl;
 }
 
 void ModifiedDetConst::SetFoilZ(G4double newZ){
@@ -52,6 +56,9 @@ void ModifiedDetConst::SetFoilZ(G4double newZ){
     << "The foil's Z position is now: "
     << G4BestUnit(fPhysFoil->GetObjectTranslation().getZ(), "Length")
     << G4endl;
+
+  G4RunManager::GetRunManager() -> GeometryHasBeenModified();
+  G4cout << "... Geometry is notified .... " << G4endl;
 }
 
 
