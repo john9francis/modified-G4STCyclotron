@@ -6,6 +6,7 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 ## New files: 
 - "modDetConst.hh" and "modDetConst.cc" define a modified detector construction that can be customized as desired. They still include the target and the foil, only because these geometries are basically required for the app to work. So many parts of the program depend on these two geometries including the graphs produced and the messengers.
   - This new class defines the tube part4 outer radius and the tube part 4 length to 1 m each. The reason for this is that when modifying the target geometry, the program throws an error if the target is bigger than the tube it's in. Even though tube part 4 doesn't exist in the world, these member variables still restrict the size of the target. Setting them both to 1 m gives the target sufficient freedom to be modified.
+- "modDetMessenger.hh" and "modDetMessenger.cc"
   
 ## Modified files:
 - STCyclotron.cc: instead of registering the STCyclotronDetectorConstruction, I registered my own class, "ModifiedDetConst"
