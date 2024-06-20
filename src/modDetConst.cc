@@ -30,12 +30,27 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
     << "Setting Target Z to: " 
     << G4BestUnit(newZ, "Length")
     << G4endl;
+
+  fTarget_z_position = newZ;
+  fPhysTarget->SetTranslation(G4ThreeVector(0, 0, newZ));
+
+  G4cout 
+    << "The target's Z position is now: "
+    << G4BestUnit(fPhysTarget->GetObjectTranslation().getZ(), "Length")
+    << G4endl;
 }
 
 void ModifiedDetConst::SetFoilZ(G4double newZ){
   G4cout 
     << "Setting Foil Z to: " 
     << G4BestUnit(newZ, "Length")
+    << G4endl;
+
+  fPhysFoil->SetTranslation(G4ThreeVector(0, 0, newZ));
+
+  G4cout
+    << "The foil's Z position is now: "
+    << G4BestUnit(fPhysFoil->GetObjectTranslation().getZ(), "Length")
     << G4endl;
 }
 

@@ -33,7 +33,7 @@ void ModifiedDetMessenger::SetNewValue(G4UIcommand* cmd, G4String newValue){
 
   if (cmd == fSetFoilZCmd){
     G4double newZ = fSetFoilZCmd->GetNewDoubleValue(newValue);
-    fModDet->SetTargetZ(newZ);
+    fModDet->SetFoilZ(newZ);
   
     // move the analysis graphs accordingly
   }
