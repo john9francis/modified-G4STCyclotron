@@ -7,6 +7,8 @@
 #include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 
+#include "G4UnitsTable.hh"
+
 #include "modDetMessenger.hh"
 
 ModifiedDetConst::ModifiedDetConst() : STCyclotronDetectorConstruction() {
@@ -24,11 +26,17 @@ ModifiedDetConst::~ModifiedDetConst() {
 }
 
 void ModifiedDetConst::SetTargetZ(G4double newZ){
-  G4cout << "Setting Target Z from mod det const..." << G4endl;
+  G4cout 
+    << "Setting Target Z to: " 
+    << G4BestUnit(newZ, "Length")
+    << G4endl;
 }
 
 void ModifiedDetConst::SetFoilZ(G4double newZ){
-  G4cout << "Setting Foil Z from mod det const..." << G4endl;
+  G4cout 
+    << "Setting Foil Z to: " 
+    << G4BestUnit(newZ, "Length")
+    << G4endl;
 }
 
 
