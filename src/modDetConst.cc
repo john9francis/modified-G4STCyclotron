@@ -54,8 +54,8 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
   // /analysis/h1/set 4  30  185. 188. mm	#depth of isotope creation in the target.
   // /analysis/h2/setX 3  100 185. 188. mm
   // /analysis/h2/setY 3  100 0. 19. MeV     #depth = f(energy (MeV))
-  analysisManager->SetH1(4, 30, fTarget_z_position - fTarget_thickness/2, fTarget_z_position + fTarget_thickness/2, "mm");
-  analysisManager->SetH2(3, 100, fTarget_z_position - fTarget_thickness, fTarget_z_position + fTarget_thickness,
+  analysisManager->SetH1(4, 30, (fTarget_z_position - fTarget_thickness)*mm, (fTarget_z_position + fTarget_thickness)*mm, "mm");
+  analysisManager->SetH2(3, 100, (fTarget_z_position - fTarget_thickness)*mm, (fTarget_z_position + fTarget_thickness)*mm,
     100, 0, 19, "mm", "MeV");
 
 }
