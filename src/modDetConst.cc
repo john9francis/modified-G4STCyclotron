@@ -13,6 +13,12 @@ ModifiedDetConst::ModifiedDetConst() : STCyclotronDetectorConstruction() {
   // Set all the lengths to very large so we don't have any restrictions
   fTube_outerRadius_PART4 = 1 * m;
   fTube_length_PART4 = 1 * m;
+
+  fModDetMessenger = new ModifiedDetMessenger(this);
+}
+
+ModifiedDetConst::~ModifiedDetConst() {
+  delete fModDetMessenger;
 }
 
 

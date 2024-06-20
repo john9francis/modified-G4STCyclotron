@@ -22,3 +22,21 @@ ModifiedDetMessenger::~ModifiedDetMessenger(){
   delete fSetTargetZCmd;
   delete fSetFoilZCmd;
 }
+
+void ModifiedDetMessenger::SetNewValue(G4UIcommand* cmd, G4String newValue){
+  if (cmd == fSetTargetZCmd){
+    G4double newZ = fSetTargetZCmd->GetNewDoubleValue(newValue);
+    // fModDet->SetTargetZ(newZ);
+
+    G4cout << "Setting Target Z..." << G4endl;
+    // move the analysis graphs accordingly
+  }
+
+  if (cmd == fSetFoilZCmd){
+    G4double newZ = fSetFoilZCmd->GetNewDoubleValue(newValue);
+    // fModDet->SetTargetZ(newZ);
+  
+    G4cout << "Setting Foil Z..." << G4endl;
+    // move the analysis graphs accordingly
+  }
+}
