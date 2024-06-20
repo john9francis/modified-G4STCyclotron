@@ -7,6 +7,8 @@
 #include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 
+#include "modDetMessenger.hh"
+
 ModifiedDetConst::ModifiedDetConst() : STCyclotronDetectorConstruction() {
   G4cout << "Hello Modified Detector Construction" << G4endl;
 
@@ -19,6 +21,14 @@ ModifiedDetConst::ModifiedDetConst() : STCyclotronDetectorConstruction() {
 
 ModifiedDetConst::~ModifiedDetConst() {
   delete fModDetMessenger;
+}
+
+void ModifiedDetConst::SetTargetZ(G4double newZ){
+  G4cout << "Setting Target Z from mod det const..." << G4endl;
+}
+
+void ModifiedDetConst::SetFoilZ(G4double newZ){
+  G4cout << "Setting Foil Z from mod det const..." << G4endl;
 }
 
 

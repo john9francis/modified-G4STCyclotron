@@ -3,7 +3,8 @@
 
 #include "STCyclotronDetectorConstruction.hh"
 #include "STCyclotronDetectorMessenger.hh"
-#include "modDetMessenger.hh"
+
+class ModifiedDetMessenger;
 
 class ModifiedDetConst : public STCyclotronDetectorConstruction {
 public:
@@ -13,8 +14,14 @@ public:
   G4VPhysicalVolume* Construct() override;
 
   void SetFoilThickness(G4double foilThickness) override;
+
 private:
+  void SetTargetZ(G4double newZ);
+  void SetFoilZ(G4double newZ);
+
   ModifiedDetMessenger* fModDetMessenger;
+
+  friend class ModifiedDetMessenger;
 };
 
 

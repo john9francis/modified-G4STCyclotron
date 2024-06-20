@@ -7,6 +7,8 @@
 #include "G4UImessenger.hh"
 #include "G4UIcmdWithADoubleAndUnit.hh"
 #include "globals.hh"
+#include "modDetConst.hh"
+
 
 class ModifiedDetConst;
 
