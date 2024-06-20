@@ -15,7 +15,10 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 # Todo:
 - [x] Get it running outside a container so I can get an OGL viewer.
 - [x] Dockerize it. update: docker image can be found [here](https://hub.docker.com/repository/docker/john9francis/modified_stcyclotron)
-- [ ] Implement Dockerfile.dev and Dockerfile separate images. Dockerfile should take the stuff from a GitHub release using wget, and Dockerfile.dev should install git and pull from main. 
+- [x] Implement Dockerfile.dev and Dockerfile separate images. Dockerfile should take the stuff from a GitHub release using wget, and Dockerfile.dev should install git and pull from main. 
+- [x] Implement a messenger to move the positions of the target and foil
+- [ ] Make the moveDetector messenger adjust the analysis graphs' positions 
+- [ ] Have the other messenger commands automatically adjust the analysis graphs' positions as well
 
 
 # Acknowledgments
