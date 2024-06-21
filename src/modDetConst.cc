@@ -47,6 +47,20 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
   G4cout << "... Geometry is notified .... " << G4endl;
 
 
+  G4cout
+    << "The actual fTarget_z_position value is: "
+    << fTarget_z_position
+    << G4endl;
+
+  G4cout 
+    << "Analyais H1:4 and H2:3 adjusting x axis: "
+    << "Starting: "
+    << fTarget_z_position - fTarget_thickness
+    << " Ending: "
+    << fTarget_z_position + fTarget_thickness
+    << G4endl;
+
+
   // move the analysis graphs
   auto analysisManager = G4AnalysisManager::Instance();
   
@@ -54,8 +68,8 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
   // /analysis/h1/set 4  30  185. 188. mm	#depth of isotope creation in the target.
   // /analysis/h2/setX 3  100 185. 188. mm
   // /analysis/h2/setY 3  100 0. 19. MeV     #depth = f(energy (MeV))
-  analysisManager->SetH1(4, 30, (fTarget_z_position - fTarget_thickness)*mm, (fTarget_z_position + fTarget_thickness)*mm, "mm");
-  analysisManager->SetH2(3, 100, (fTarget_z_position - fTarget_thickness)*mm, (fTarget_z_position + fTarget_thickness)*mm,
+  analysisManager->SetH1(4, 30, fTarget_z_position - fTarget_thickness, fTarget_z_position + fTarget_thickness, "mm");
+  analysisManager->SetH2(3, 100, fTarget_z_position - fTarget_thickness, fTarget_z_position + fTarget_thickness,
     100, 0, 19, "mm", "MeV");
 
 }
