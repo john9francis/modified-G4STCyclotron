@@ -6,8 +6,10 @@ This is a copy of the official Geant4 STCyclotron example, but modified to use a
 - The reason for this is to see if it's any faster. Currently, my modified STCyclotron is extremely slow compared to the original. The only difference I can think of is the inheritance may be slowing it down. It's weird that it would, but it is also just simpler in general to just modify instead of inherit. 
 
 # Changes to original
-- [ ] Removed all detectors except the target and foil
+- [ ] Removed all detectors except the target and foil (in DetectorConstruction)
 - [ ] Removed constraints on the foil and target diameters (See DetectorConstruction and DetectorMessenger)
+- [ ] Added functions SetTargetZ and SetFoilZ that can move around the target and foil.
+- [ ] Added functions SetTargetR and SetFoilR that can adjust the size of the target and foil.
 
 # Todo:
 - [x] Get it running outside a container so I can get an OGL viewer.
