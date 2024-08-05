@@ -2,6 +2,8 @@
 
 This is a copy of the official Geant4 STCyclotron example, but modified to use any geometry.
 
+- Todo: make a branch where instead of using inheritance, I just actually modify the main file. Aka copy it into a modified file and just adjust what I want. 
+
 # Changes to original
 ## New files: 
 - "modDetConst.hh" and "modDetConst.cc" define a modified detector construction that can be customized as desired. They still include the target and the foil, only because these geometries are basically required for the app to work. So many parts of the program depend on these two geometries including the graphs produced and the messengers.
