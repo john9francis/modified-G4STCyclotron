@@ -88,7 +88,7 @@ public:
   void SetFoilMaterial(G4String );
 
   void SetTargetThickness(G4double );
-  virtual void SetFoilThickness(G4double );
+  void SetFoilThickness(G4double );
   
   //Get methods
   inline G4double GetTargetPosition1(){return fLayer1_z_position_PART4 + 0.5*11.5 - fTarget_thickness;}
@@ -183,9 +183,6 @@ private:
   G4double fFoilVolume;
   
   std::ofstream fParametersSummary;
-
-
-  friend class ModifiedDetConst;
 
 };
 #endif
