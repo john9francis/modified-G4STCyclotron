@@ -3,6 +3,7 @@
 This is a copy of the official Geant4 STCyclotron example, but modified to use any geometry.
 
 - Todo: make a branch where instead of using inheritance, I just actually modify the main file. Aka copy it into a modified file and just adjust what I want. 
+- The reason for this is to see if it's any faster. Currently, my modified STCyclotron is extremely slow compared to the original. The only difference I can think of is the inheritance may be slowing it down. It's weird that it would, but it is also just simpler in general to just modify instead of inherit. 
 
 # Changes to original
 ## New files: 
