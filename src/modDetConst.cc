@@ -31,7 +31,7 @@ ModifiedDetConst::~ModifiedDetConst() {
 
 void ModifiedDetConst::SetTargetZ(G4double newZ){
 
-  G4int worldBorder;
+  G4int worldBorder; // todo: Make sure it doesn't leave the world
 
   G4cout 
     << "Setting Target Z to: " 
@@ -56,7 +56,7 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
     << G4endl;
 
   G4cout 
-    << "Analyais H1:4 and H2:3 adjusting x axis: "
+    << "The target position is now: "
     << "Starting: "
     << fTarget_z_position - fTarget_thickness
     << " Ending: "
@@ -78,6 +78,9 @@ void ModifiedDetConst::SetTargetZ(G4double newZ){
 }
 
 void ModifiedDetConst::SetFoilZ(G4double newZ){
+
+  G4int worldBorder; // todo: Make sure it doesn't leave the world
+
   G4cout 
     << "Setting Foil Z to: " 
     << G4BestUnit(newZ, "Length")
@@ -92,6 +95,10 @@ void ModifiedDetConst::SetFoilZ(G4double newZ){
 
   G4RunManager::GetRunManager() -> GeometryHasBeenModified();
   G4cout << "... Geometry is notified .... " << G4endl;
+}
+
+G4double ModifiedDetConst::GetTargetStartZ(){
+  return fTarget_z_position - 0.5 * fTarget_thickness;
 }
 
 
