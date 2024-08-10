@@ -9,7 +9,7 @@ WORKDIR /home/modified_cyclotron/build/
 
 RUN cmake -DCMAKE_INSTALL_PREFIX=/home/modified_cyclotron/build/program_files/ ..
 
-RUN make -j5
+RUN make -j10
 
 COPY run.sh /home/modified_cyclotron/build/
 RUN chmod -x /home/modified_cyclotron/build/
